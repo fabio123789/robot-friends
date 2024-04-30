@@ -1,25 +1,47 @@
-import logo from "./logo.svg";
-import "./App.css";
 import React from "react";
+import "./App.css";
+import CardList from "./components/cardList/CardList";
+import SearchBar from "./components/searchbar/SearchBar";
+import Scroll from "./components/scroll/Scroll";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      robots: [],
+      searchField: "",
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => this.setState({ robots: users }));
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    let { robots, searchField } = this.state;
+    const filteredRobots = robots.filter((robots) => {
+      return robots.name.toLowerCase().includes(searchField.toLowerCase());
+    });
+    return !robots.length ? (
+      <h1>Loading</h1>
+    ) : (
+      <div className="FlexCenter">
+        <h1 className="Title">Robot Friends</h1>
+        <SearchBar
+          value={searchField}
+          searchChange={(event) => {
+            this.setState({ searchField: event.target.value });
+          }}
+        />
+        <Scroll>
+          {!filteredRobots.length ? (
+            <h1>No Robots Friend with that name</h1>
+          ) : (
+            <CardList robots={filteredRobots} />
+          )}
+        </Scroll>
       </div>
     );
   }

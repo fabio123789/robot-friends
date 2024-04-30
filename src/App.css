@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+}
+body, #root {
+  margin: 0;
+  font-family: "Jersey 15", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, rgb(72, 48, 137), rgb(11, 78, 42));
+  overflow: hidden;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Title{
+    font-size: 8em;
+    color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.FlexCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.SearchBar {
+  border-radius: 50px;
+  border: 0px;
+  height: 30px;
+  padding-left: 15px;
+  width: 20%;
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CardList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Card {
+  background-color: darkcyan;
+  border-radius: 20px;
+  margin: 5px;
+  transition: all 0.5s;
+  padding: 10px;
+}
+
+.Card div > * {
+    color: white;
+}
+
+.Card:hover {
+  transform: scale(1.05);
+}
+
+.CardTextArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }

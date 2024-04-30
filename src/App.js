@@ -3,6 +3,7 @@ import "./App.css";
 import CardList from "./components/cardList/CardList";
 import SearchBar from "./components/searchbar/SearchBar";
 import Scroll from "./components/scroll/Scroll";
+import ErrorBoundry from "./components/errorBoundry/ErrorBoundry";
 
 class App extends React.Component {
   constructor() {
@@ -39,7 +40,9 @@ class App extends React.Component {
           {!filteredRobots.length ? (
             <h1>No Robots Friend with that name</h1>
           ) : (
-            <CardList robots={filteredRobots} />
+            <ErrorBoundry>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundry>
           )}
         </Scroll>
       </div>

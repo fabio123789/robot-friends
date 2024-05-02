@@ -1,8 +1,12 @@
 import React from "react";
 
-const Card = ({ name, email, id }) => {
+const Card = ({ name, email, id, onEdit, onDelete }) => {
   return (
     <div className="Card">
+      <div className="CardIconsArea">
+        <i className="bi bi-pencil-fill" onClick={onEdit}></i>
+        <i style={{marginLeft: '15px'}} className="bi bi-trash-fill" onClick={onDelete}></i>
+      </div>
       <img src={`https://www.robohash.org/${id}?200x200`} alt="Robots" />
       <div className="CardTextArea">
         <h2 style={{ fontSize: "2em" }}>{name}</h2>

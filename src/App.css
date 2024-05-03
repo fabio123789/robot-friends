@@ -12,6 +12,12 @@ body,
   height: 100vh;
 }
 
+h1, h2{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .Title {
   font-size: 8em;
   color: white;
@@ -40,7 +46,7 @@ code {
   height: 30px;
   padding-left: 15px;
   background: transparent;
-  border: 2px solid darkcyan;
+  border: 2px solid white;
   color: white;
   font-size: 1.2em;
   width: 100%;
@@ -59,6 +65,7 @@ code {
   margin: 5px;
   transition: all 0.5s;
   padding: 10px;
+  max-width: 300px;
 }
 
 .Card div > * {
@@ -91,6 +98,11 @@ code {
   margin-top: 10px;
 }
 
+.CardTextArea > * {
+  width: 100%;
+  text-align: center;
+}
+
 .PopupBackground {
   position: fixed;
   width: 100vw;
@@ -107,17 +119,17 @@ code {
   margin: auto;
   background: darkcyan;
   border-radius: 20px;
-  width: 60%;
+  width: fit-content;
   display: flex;
   flex-direction: column;
 }
 
 .Button {
   cursor: pointer;
-  background: rgb(72, 48, 137);
+  background: rgb(56, 34, 115);
   color: white;
   padding: 5px 20px;
-  border: 5px solid rgb(72, 48, 137);
+  border: 5px solid rgb(56, 34, 115);
   border-radius: 40px;
   display: inline-block;
   font-size: 1.5em;
@@ -126,8 +138,8 @@ code {
 }
 
 .Warning{
-  border: 5px solid rgb(204, 2, 2);
-  background: rgb(204, 2, 2);
+  border: 5px solid rgb(204, 3, 3);
+  background: rgb(204, 3, 3);
 }
 
 .Disabled{

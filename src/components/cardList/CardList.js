@@ -4,7 +4,7 @@ const CardList = ({robots, onEdit, onDelete}) => {
   return (
     <div className="FlexCenter CardList">
       {robots.map((robot, key) => (
-        <Card key={key} id={robot.id} name={robot.name} email={robot.email} onEdit={(data) => onEdit(data)} onDelete={() => onDelete(key)} />
+        <Card key={key} id={robot.id} name={robot.name} email={robot.email} onEdit={() => onEdit(key)} onDelete={() => onDelete(key)} />
       ))}
     </div>
   );

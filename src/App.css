@@ -30,16 +30,20 @@ code {
   height: 100%;
 }
 
+.InputsArea{
+  display: flex;
+  align-items: center;
+}
+
 .SearchBar {
   border-radius: 50px;
   height: 30px;
   padding-left: 15px;
-  width: 20%;
-  margin-bottom: 30px;
   background: transparent;
   border: 2px solid darkcyan;
   color: white;
   font-size: 1.2em;
+  width: 100%;
 }
 
 .CardList {
@@ -103,22 +107,31 @@ code {
   margin: auto;
   background: darkcyan;
   border-radius: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .Button {
   cursor: pointer;
-  background: transparent;
+  background: rgb(72, 48, 137);
   color: white;
-  padding: 10px 20px;
-  border: 5px solid rgb(11, 78, 42);
+  padding: 5px 20px;
+  border: 5px solid rgb(72, 48, 137);
   border-radius: 40px;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   font-family: "Jersey 15", sans-serif;
 }
 
 .Warning{
   border: 5px solid rgb(204, 2, 2);
-  background-color: rgb(204, 2, 2);
+  background: rgb(204, 2, 2);
+}
+
+.Disabled{
+  cursor: default;
+  filter: grayscale(1);
+  pointer-events: none;
 }

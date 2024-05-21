@@ -36,6 +36,3 @@ The "Robot Friends" project is a dynamic web application created using ReactJS. 
 ### User Actions
 - Buttons for creating new users, editing existing users, and deleting users.
 - Each action triggers the appropriate API call and updates the interface in real-time.
-
-## Learning Outcomes
-The "Robot Friends" application is a practical project that demonstrates the power of ReactJS in building interactive and responsive web applications. By integrating with a fake API, it provides a comprehensive user management system that is both fun and functional.
